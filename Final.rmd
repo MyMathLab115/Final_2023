@@ -92,17 +92,52 @@ The Fisher Exact test p value is 0.00000000000004613, which means there is a dif
 
 ### Introduction
 
+$H_0$: The vaccine is not effective in preventing covid-19 in females.
+
+$H_A$: The vaccine is effective in preventing covid-19 in females.
+
+The data used for this clinical test, came from a final data file provided by professor Brownlow. 
+
+
 ### Methods
 
+The response method used is Cat~Cat. Data used was based off data from the final data provided, we also subset the data to include females. We will be using bar chart, numerical results, and inferential results for the graphical display.
+
+
 ### Results
+
+```{r}
+femaleData = filter(FinalData, sex == "F")
+```
 
 #### Descriptive results
 
 ##### Graphical results
 
+```{r}
+barchartGC(~infected+treatment,data=femaleData)
+barchartGC(~infected+treatment,data=femaleData, type="percent")
+```
+
+The graph shows, among the females who got covid-19, about 40% females got the vaccine, and about 60% females got the placebo. The graph also shows that there was a significant difference in the females who received either the placebo or the vaccine, and were ok.
+
 ##### Numerical results
 
+```{r}
+table2 <- xtabs(~infected + treatment, data=femaleData)
+rowPerc(table2)
+colPerc(table2)
+```
+
+
 ##### Inferencial results
+
+```{r}
+chisq.test(table2)
+chisqtestGC(table2)
+fisher.test(table2)
+```
+
 
 ### Discussion and conclusion
 
@@ -112,7 +147,16 @@ The Fisher Exact test p value is 0.00000000000004613, which means there is a dif
 
 ### Introduction
 
+$H_0$: The vaccine is not effective in preventing covid-19 in LGBTQ.
+
+$H_A$: The vaccine is effective in preventing covid-19 in LGBTQ.
+
+The data used for this clinical test, came from a final data file provided by professor Brownlow. 
+
 ### Methods
+
+The response method used is Cat~Cat. Data used was based off data from the final data provided, we also subset the data to include LGBTQ. We will be using bar chart, numerical results, and inferential results for the graphical display.
+
 
 ### Results
 
@@ -132,7 +176,16 @@ The Fisher Exact test p value is 0.00000000000004613, which means there is a dif
 
 ### Introduction
 
+$H_0$: The vaccine is not effective in preventing covid-19 in Druggies.
+
+$H_A$: The vaccine is effective in preventing covid-19 in Druggies.
+
+The data used for this clinical test, came from a final data file provided by professor Brownlow. 
+
 ### Methods
+
+The response method used is Cat~Cat. Data used was based off data from the final data provided, we also subset the data to include Druggies. We will be using bar chart, numerical results, and inferential results for the graphical display.
+
 
 ### Results
 
