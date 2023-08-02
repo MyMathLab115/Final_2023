@@ -35,22 +35,48 @@ $H_0$: The vaccine is not effective in preventing covid-19 in males.
 
 $H_A$: The vaccine is effective in preventing covid-19 in males.
 
-The data i used for this clinical test, came from a final data file provided by professor Brownlow. 
+The data used for this clinical test, came from a final data file provided by professor Brownlow. 
 
 
 ### Methods
 
-
+The response method used is Cat~Cat. Data used was based off data from the final data provided, we also subset the data to include males. We will be using bar chart, numerical results, and inferential results for the graphical display.
 
 ### Results
+
+```{r}
+maleData = filter (FinalData, sex == "M")
+```
 
 #### Descriptive results
 
 ##### Graphical results
 
+```{r}
+barchartGC(~infected+treatment,data=maleData)
+barchartGC(~infected+treatment,data=maleData, type="percent")
+```
+
+The graph shows, among the males who got covid-19, about 30% got the vaccine, and about 70% got placebo. The graph also shows that there was a slight difference in the males who received the vaccine, and were ok.
+
 ##### Numerical results
 
+```{r}
+table1 <- xtabs(~infected + treatment, data=maleData)
+rowPerc(table1)
+colPerc(table1)
+```
+
+The data shows that there was a 2 times difference for the males who took the vaccine and got covid-19. The males who took the placebo had 70% chance of not being infected, and 30% less likely, for the male who took the vaccine. Among the males who were ok and took the vaccine, there was no difference.
+
 ##### Inferencial results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
 
 ### Discussion and conclusion
 
