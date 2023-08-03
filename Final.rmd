@@ -67,7 +67,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-The data shows that there was a 2 times difference for the males who took the vaccine and got covid-19. The males who took the placebo had 70% chance of not being infected, and 30% less likely, for the male who took the vaccine. Among the males who were ok and took the vaccine, there was no difference.
+The numerical data shows that there was a 2 times difference for the males who took the vaccine and got covid-19. The males who took the placebo had 70% chance of not being infected, and 30% less likely, for the male who took the vaccine. Among the males who were ok and took the vaccine, there was no difference.
 
 ##### Inferencial results
 
@@ -128,7 +128,7 @@ table2 <- xtabs(~infected + treatment, data=femaleData)
 rowPerc(table2)
 colPerc(table2)
 ```
-The data shows among the females group that were infected by covid-19, those were unvaccinated, 60% of females experienced symptoms, while only 40% of female group who were vaccinated experienced symptoms.The data also shows that within the female placebo group, 2.04% were infected with covid-19, while only 1.37% of the female vaccinated group contracted covid-19.
+The numerical data shows among the females group that were infected by covid-19, those were unvaccinated, 60% of females experienced symptoms, while only 40% of female group who were vaccinated experienced symptoms.The data also shows that within the female placebo group, 2.04% were infected with covid-19, while only 1.37% of the female vaccinated group contracted covid-19.
 
 ##### Inferencial results
 
@@ -251,7 +251,7 @@ rowPerc(table4)
 colPerc(table4)
 ```
 
-The data shows that 11.67% of the placebo druggie group experienced covid-19 symptoms when they were infected by covid-19, while 88.33% of vaccinated DrugUsers experienced symptoms. The data also shows .4% of the druggie placebo group got infected with covid-19, while 3.06% of the vaccinated group got infected with covid-19.
+The numerical data shows that 11.67% of the placebo drug user group experienced covid-19 symptoms when they were infected by covid-19, while 88.33% of vaccinated Drug users experienced symptoms. The data also shows .4% of the drug user placebo group got infected with covid-19, while 3.06% of the vaccinated group got infected with covid-19.
 
 ##### Inferencial results
 
